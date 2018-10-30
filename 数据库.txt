@@ -1,0 +1,63 @@
+///数据库设计
+
+
+
+1.管理员：Admin
+	AID 管理员编号 int 自增  主键 ，
+	AuserName 管理员账号 varchar（10） 唯一 不能为空，
+	Apassword 管理员密码 varchar(10) 不能为空 ，
+	power 权限 varchar(10) 不能为空，
+	photoAddress 头像地址  varchar(100) 可为空。
+	
+2.用户：Users
+	UID 用户编号 int 自增 主键，
+	Uname 用户账号 varchar(10) 唯一 不能为空，
+	Upassword 用户密码 varchar(32) MD5加密  不能为空，
+	Usex 用户性别 varchar（2） （0为男，1为女） 默认为0，
+	phone 手机号 int 不能为空，
+	photoAddress 头像地址  varchar(100) 可为空，
+	Email 邮箱 varchar（20） 可为空 ，
+	AddressID 收货地址 varchar(20) 可为空，
+	CardID 卡卷编号 varchar（100） 可为空。
+	
+3.商品类型：ProductTye
+	TID 类型编号 int 主键，
+	Tname 类型名称 varchar(10) 唯一 非空，
+	show 是否显示 varchar（2）（0为不显示，1为显示） 默认值为0，
+	sort 排序 int 唯一，非空。
+	
+4.商品详情：Products
+	PID 商品编号 int 主键 自增 ，
+	TID 商品编号 int （外键，商品类型）
+	Pname 商品名称 varchar(10) 唯一 不能为空，
+	Note 商品详情 varchar(1000) 不能为空，
+	photoAddress 商品图片地址 varchar(100) 不能为空，
+	Number 商品库存 int 不能为空（最大为999），
+	price 价格 int 不能为空，
+	show 是否显示 varchar（2）（0为不显示，1为显示） 默认值为0， 
+	Recommend 是否推荐（0为推荐，1为不推荐） 默认为0。
+	
+5.订单：Order
+	OID 订单编号 varchar(20) 主键，
+	PIDS 商品编号及数量 varchar（100） （PID；Number：Price） 不能为空，
+	AddressID 收货地址 varchar(20) 不能为空，
+	CardIDS 优惠券集 varchar（100） ，
+	Price 价格 int 不能为空，
+	isPay 是否付款 varchar(10) （0为未付款，1为付款）不能为空，
+	isDispose 是否已处理 varchar（2）（0为未处理，1为已处理），
+	
+6.网站设置：Website
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
