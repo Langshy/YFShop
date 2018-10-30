@@ -47,7 +47,9 @@
 	isDispose 是否已处理 varchar（2）（0为未处理，1为已处理），
 	
 6.网站设置：Website
-	
+	Wname 主站名称 varchar(20) 非空 唯一，非空。
+	Wbg 主视图地址 varchar(100) 非空，
+	Wnbg 视图地址 varchar(100)。
 	
 
 
