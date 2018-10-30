@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href='css/home.css'>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="bg"></div>
+    <!--<img src="images/Christmas New Arrivals.png" width="100%" height="100%" class="bg"/>-->
+    <div class="header_nav nav-fix">
+        <div class="left"><img src="images/logo.png" height="68" width="257"/></div>
+        <div class="centre">
+            <ul>
+                <li>
+                    <a href="#" class="check-this">首页</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">在线商城</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">新闻动态</a>
+                    <a href="#">下载app</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <span><img src="images/search.png"></span>
+                    <span><img src="images/log in.png" class="getLogin"></span>
+                    <span><img src="images/形状 12.png"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="iframe">
+    <iframe src="html/home.html" scrolling="no" frameborder="0" id="frameContent" onload="this.height=350"></iframe>
+</div>
+<div id="l-Sin" style="display: none">
+    <div class="close">
+        <img src="images/close.png">
+    </div>
+    <div class="l-SinContent">
+        <div class="l-Sin">
+            <div class="choose-text show" id="login">登录</div>
+            <div class="choose-text" id="register">注册</div>
+        </div>
+        <div class="login">
+            <form>
+                <ul>
+                    <li><img src="images/用户名.png"><input type="text" name="userName" placeholder="输入用户名"></li>
+                    <li><img src="images/密码.png"><input type="password" name="password" placeholder="输入6-32位数字或字母"></li>
+                    <li><input type="submit" value="登录" class="button"></li>
+                </ul>
+            </form>
+        </div>
+        <div class="register"  style="display: none">
+            <form>
+                <ul>
+                    <li><img src="images/用户名.png"><input type="text" name="userName" placeholder="输入用户名"></li>
+                    <li><img src="images/手机.png"><input type="text" name="phone" placeholder="输入手机号"></li>
+                    <li class="vecode"><img src="images/验证码.png"><input type="text" name="vecode" placeholder="输入验证码"></li>
+                    <li><img src="images/密码.png"><input type="password" name="password" placeholder="输入6-32位数字或字母"></li>
+                    <li><input type="submit" value="登录" class="button"></li>
+                    <span>
+                        <input type="checkbox" value="checked">
+                        我已经同意了<a href="javascript:;">《一方家具服务条款》</a>
+                    </span>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="toTop">
+    <a href="#"><img src="images/形状 820.png" width="100%"height="100%"></a>
+</div>
+<footer>
+    <div class="footer_img"><img src="images/世界很大，寻一方静土.png" width="100%" height="100%"/></div>
+    <div class="footer_bottom">
+        <div class="footer_bottom_a">
+            <ul>
+                <li style="margin-left: 6%">
+                    <h1 style="font-size: 15px;color:#333333;font-weight: bold;margin-top: 30px">联系我们 -</h1><br>
+                    <p style="color:#333333;font-size: 6px">XiaoYi Dong</p>
+                    <p style="color:#333333;font-size: 6px">1021517054@qq.com</p>
+                </li>
+                <li style="margin-left: 14%">
+                    <h1 style="font-size: 15px;color:#333333;font-weight: bold;margin-top: 30px">客服热线 -</h1><br>
+                    <p style="color:#333333;font-size: 6px">400-123-1234</p>
+                    <p style="color:#333333;font-size: 6px">+61 433 679 520</p>
+                </li>
+                <li style="margin-left: 14%">
+                    <h1 style="font-size: 15px;color:#333333;font-weight: bold;margin-top: 30px">关于我们 -</h1><br>
+                    <p style="color:#333333;font-size: 6px">weibo：yifang-home</p>
+                    <p style="color:#333333;font-size: 6px">WeChat：yifang-home</p>
+                </li>
+                <li style="margin-left: 14%">
+                    <img src="images/QR CODE.png">
+                    <p style="color:#333333;font-size: 6px;text-align: center">扫一扫下载客户端</p>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_bottom_b">
+            <p>Copyright © 2017 yifanghome.com Inc.All Rights Reserved. 厦门一方家居有限公司</p><br>
+            <p>版权所有 京ICP备14049645号-0 增值电信业务经营许可证：京ICP证123456号</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        //滚动条滚动事件
+        window.onscroll=function () {
+            let top = document.documentElement.scrollTop || document.body.scrollTop;
+            console.log(top);
+            if(top<685){
+                $('.header_nav').removeClass('nav-move').addClass('nav-fix');
+            }else {
+                $('.header_nav').removeClass('nav-fix').addClass('nav-move');
+            }
+            if(top<800){
+                $('.toTop').hide().addClass('top-fix');
+            }else if(top>=800 && top <=($('#frameContent').contents().find('body').height() + 490)){
+                console.log($('#frameContent').contents().find('body').height()+460);
+                $('.toTop').show().addClass('top-fix');
+            }
+        };
+        //iframe 自适应
+        let timer;
+
+        $('#frameContent').on('load',function () {
+            if(timer){
+                clearInterval(timer);
+            }
+            let mainHeight,pre_height;
+            let frameContent = $(this);
+            timer = setInterval(function () {
+                mainHeight = frameContent.contents().find('body').height() + 150;
+                if(mainHeight != pre_height){
+                    pre_height = mainHeight;
+                    frameContent.height(Math.max(mainHeight,350));
+                }
+            },100);
+        });
+
+        //login&&register
+        let login = $('#login');
+        let register = $('#register');
+
+        login.on('click',function () {
+            login.addClass('show');
+            register.removeClass('show');
+            $('.login').show();
+            $('.register').hide();
+        });
+        register.on('click',function () {
+            register.addClass('show');
+            login.removeClass('show');
+            $('.login').hide();
+            $('.register').show();
+        });
+
+        $('.close').on('click',function () {
+            $('#l-Sin').hide();
+        });
+        
+        $('.getLogin').on('click',function () {
+            $('#l-Sin').show();
+        });
+
+        $('.centre>ul>li>a').on('click',function () {
+            $('.centre>ul>li').children().removeClass('check-this');
+            $(this).addClass('check-this');
+        });
+    });
+</script>
