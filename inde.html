@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href='css/home.css'>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<header>
+    <img src="images/Christmas New Arrivals.png" width="100%" height="100%"/>
+    <div class="header_nav">
+        <div class="left"><img src="images/logo.png" height="68" width="257"/></div>
+        <div class="centre">
+            <ul>
+                <li>
+                    <a href="#" style="border-bottom: 2px #138b8b solid;">首页</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">在线商城</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">新闻动态</a>
+                    <a href="#">下载app</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <span><img src="images/search.png" ></span>
+                    <span><img src="images/log in.png" ></span>
+                    <span><img src="images/形状 12.png" ></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="iframe">
+    <iframe src="html/home.html" scrolling="no" frameborder="0" id="frameContent" onload="this.height=350"></iframe>
+</div>
+<div id="l-Sin">
+    <div class="close">
+        <img src="images/close.png">
+    </div>
+    <div class="l-SinContent">
+        <div class="l-Sin">
+            <div class="choose-text show" id="login">登录</div>
+            <div class="choose-text" id="register">注册</div>
+        </div>
+        <div class="login">
+            <form>
+                <ul>
+                    <li><img src="images/用户名.png"><input type="text" name="userName" placeholder="输入用户名"></li>
+                    <li><img src="images/密码.png"><input type="password" name="password" placeholder="输入6-32位数字或字母"></li>
+                    <li><input type="submit" value="登录" class="button"></li>
+                </ul>
+            </form>
+        </div>
+        <div class="register"  style="display: none">
+            <form>
+                <ul>
+                    <li><img src="images/用户名.png"><input type="text" name="userName" placeholder="输入用户名"></li>
+                    <li><img src="images/手机.png"><input type="text" name="phone" placeholder="输入手机号"></li>
+                    <li class="vecode"><img src="images/验证码.png"><input type="text" name="vecode" placeholder="输入验证码"></li>
+                    <li><img src="images/密码.png"><input type="password" name="password" placeholder="输入6-32位数字或字母"></li>
+                    <li><input type="submit" value="登录" class="button"></li>
+                    <span>
+                        <input type="checkbox" value="checked">
+                        我已经同意了<a href="javascript:;">《一方家具服务条款》</a>
+                    </span>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        //iframe 自适应
+        let timer;
+
+        $('#frameContent').on('load',function () {
+            if(timer){
+                clearInterval(timer);
+            }
+            let mainHeight,pre_height;
+            let frameContent = $(this);
+            timer = setInterval(function () {
+                mainHeight = frameContent.contents().find('body').height() + 150;
+                if(mainHeight != pre_height){
+                    pre_height = mainHeight;
+                    frameContent.height(Math.max(mainHeight,350));
+                }
+            },100);
+        });
+
+        //login&&register
+        let login = $('#login');
+        let register = $('#register');
+
+        login.on('click',function () {
+            login.addClass('show');
+            register.removeClass('show');
+            $('.login').show();
+            $('.register').hide();
+        });
+        register.on('click',function () {
+            register.addClass('show');
+            login.removeClass('show');
+            $('.login').hide();
+            $('.register').show();
+        });
+
+        $('.close').on('click',function () {
+            $('#l-Sin').hide();
+        });
+    });
+</script>
