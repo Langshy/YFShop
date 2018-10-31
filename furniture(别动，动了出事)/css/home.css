@@ -13,8 +13,14 @@ body{
 }
 header{
     width: 100%;
-    height: 790px;
+    /*height: 790px;*/
     position: relative;
+}
+.hom-h{
+    height: 800px;
+}
+.con-h{
+    height: 400px;
 }
 .header_nav{
     width: 90%;
@@ -93,11 +99,12 @@ header{
     height: 280px;
     text-align: center;
     float: left;
+    cursor: pointer;
 }
 footer{
     width: 100%;
     height: 600px;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 footer .footer_img{
     width: 100%;
@@ -106,6 +113,7 @@ footer .footer_img{
 footer .footer_bottom{
     width: 100%;
     height: 260px;
+    background: #ffffff;
 }
 footer .footer_bottom_a{
     width: 64%;

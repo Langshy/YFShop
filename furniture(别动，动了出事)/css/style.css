@@ -105,6 +105,7 @@
 }
 .iframe{
     width: 100%;
+    background: #ffffff;
 }
 #frameContent{
     width: 100%;

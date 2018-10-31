@@ -3,25 +3,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>一方家具</title>
     <link rel="stylesheet" href='css/home.css'>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-<header>
-    <div class="bg"></div>
-    <!--<img src="images/Christmas New Arrivals.png" width="100%" height="100%" class="bg"/>-->
+<header class="hom-h">
+    <div class="bg">
+        <img src="images/Christmas New Arrivals.png">
+    </div>
     <div class="header_nav nav-fix">
         <div class="left"><img src="images/logo.png" height="68" width="257"/></div>
         <div class="centre">
             <ul>
                 <li>
-                    <a href="#" class="check-this">首页</a>
-                    <a href="#">关于我们</a>
+                    <a href="html/home.html" target="frameContent" class="check-this">首页</a>
+                    <a href="html/contact.html" target="frameContent">关于我们</a>
                     <a href="#">在线商城</a>
-                    <a href="#">联系我们</a>
+                    <a href="html/contact.html" target="frameContent">联系我们</a>
                     <a href="#">新闻动态</a>
                     <a href="#">下载app</a>
                 </li>
@@ -39,7 +40,7 @@
     </div>
 </header>
 <div class="iframe">
-    <iframe src="html/home.html" scrolling="no" frameborder="0" id="frameContent" onload="this.height=350"></iframe>
+    <iframe src="html/home.html" scrolling="no" frameborder="0" id="frameContent" onload="this.height=350" name="frameContent"></iframe>
 </div>
 <div id="l-Sin" style="display: none">
     <div class="close">
@@ -115,11 +116,12 @@
 </html>
 <script type="text/javascript">
     $(function () {
+
         //滚动条滚动事件
         window.onscroll=function () {
             let top = document.documentElement.scrollTop || document.body.scrollTop;
-            console.log(top);
-            if(top<685){
+            // console.log(top);
+            if(top<680){
                 $('.header_nav').removeClass('nav-move').addClass('nav-fix');
             }else {
                 $('.header_nav').removeClass('nav-fix').addClass('nav-move');
@@ -127,7 +129,7 @@
             if(top<800){
                 $('.toTop').hide().addClass('top-fix');
             }else if(top>=800 && top <=($('#frameContent').contents().find('body').height() + 490)){
-                console.log($('#frameContent').contents().find('body').height()+460);
+                // console.log($('#frameContent').contents().find('body').height()+460);
                 $('.toTop').show().addClass('top-fix');
             }
         };
@@ -177,6 +179,50 @@
         $('.centre>ul>li>a').on('click',function () {
             $('.centre>ul>li').children().removeClass('check-this');
             $(this).addClass('check-this');
+            switch ($(this).text()) {
+                case '首页':
+                    $('.bg').children().fadeTo(0,0);
+                    $('.bg').children().attr('src','images/Christmas New Arrivals.png');
+                    $('.bg').children().fadeTo('slow',1);
+                    $('header').removeClass().addClass('hom-h');
+                    window.onscroll=function () {
+                        let top = document.documentElement.scrollTop || document.body.scrollTop;
+                        // console.log(top);
+                        if(top<680){
+                            $('.header_nav').removeClass('nav-move').addClass('nav-fix');
+                        }else {
+                            $('.header_nav').removeClass('nav-fix').addClass('nav-move');
+                        }
+                        if(top<800){
+                            $('.toTop').hide().addClass('top-fix');
+                        }else if(top>=800 && top <=($('#frameContent').contents().find('body').height() + 490)){
+                            // console.log($('#frameContent').contents().find('body').height()+460);
+                            $('.toTop').show().addClass('top-fix');
+                        }
+                    };
+                    break;
+                case '联系我们':
+                    $('.bg').children().fadeTo(0,0);
+                    $('.bg').children().attr('src','images/contact.png');
+                    $('.bg').children().fadeTo('slow',1);
+                    $('header').removeClass().addClass('con-h');
+                    window.onscroll=function () {
+                        let top = document.documentElement.scrollTop || document.body.scrollTop;
+                        // console.log(top);
+                        if(top<300){
+                            $('.header_nav').removeClass('nav-move').addClass('nav-fix');
+                        }else {
+                            $('.header_nav').removeClass('nav-fix').addClass('nav-move');
+                        }
+                        if(top<800){
+                            $('.toTop').hide().addClass('top-fix');
+                        }else if(top>=800 && top <=($('#frameContent').contents().find('body').height() + 490)){
+                            // console.log($('#frameContent').contents().find('body').height()+460);
+                            $('.toTop').show().addClass('top-fix');
+                        }
+                    };
+                    break;
+            }
         });
     });
 </script>
