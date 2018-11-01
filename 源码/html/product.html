@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - Bootstrap Table</title>
+    <link rel="shortcut icon" href="../favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <base target="_blank">
+    <script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox-content">
+        <div class="row row-lg">
+            <div class="col-sm-12">
+                <!-- Example Events -->
+                <div class="example-wrap">
+                    <h4 class="example-title">事件</h4>
+                    <div class="example">
+                        <div class="alert alert-success" id="examplebtTableEventsResult" role="alert">
+                            事件结果
+                        </div>
+                        <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+                            <button type="button" class="btn btn-outline btn-default add" title="添加">
+                                <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline btn-default put-up" title="上架">
+                                <i class="glyphicon glyphicon-arrow-up" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline btn-default put-down" title="下架">
+                                <i class="glyphicon glyphicon-arrow-down" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline btn-default rcommend-yes" title="推荐">
+                                <i class="glyphicon glyphicon-star" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline btn-default rcommend-no" title="不推荐">
+                                <i class="glyphicon glyphicon-star-empty" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline btn-default" id="del" title="删除">
+                                <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <table id="exampleTableEvents" data-height="400" data-mobile-responsive="true">
+                            <thead>
+                            <tr>
+                                <th data-field="state" data-checkbox="true" width="5%"></th>
+                                <th data-field="id" width="10%">ID</th>
+                                <th data-field="name" width="15%">商品名</th>
+                                <th data-field="type" width="10">类型</th>
+                                <th data-field="number" width="5%">库存</th>
+                                <th data-field="price" width="10">价格</th>
+                                <th data-field="isShow" width="10">是否上架</th>
+                                <th data-field="Recommend" width="10">是否推荐</th>
+                                <th data-field="option" width="25%">操作</th>
+                            </tr>
+                            </thead>
+
+                            <!--商品循环-->
+                            <tr>
+                                <td data-field="state" data-checkbox="true"></td>
+                                <td data-field="id">10001</td>
+                                <td data-field="name">iPhone XS</td>
+                                <td data-field="type">Apple</td>
+                                <td data-field="number">99</td>
+                                <td data-field="price">1089</td>
+                                <td data-field="isShow">
+                                    <i class="glyphicon glyphicon-arrow-down isShow" aria-hidden="true"></i>
+                                </td>
+                                <td data-field="Recommend">
+                                    <i class="glyphicon glyphicon-star-empty Recommend" aria-hidden="true"></i>
+                                </td>
+                                <td data-field="option">
+                                    <button type="button" class="btn btn-outline btn-default del" title="删除">
+                                        <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline btn-default" title="详情">
+                                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline btn-default" title="修改">
+                                        <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td data-field="state" data-checkbox="true"></td>
+                                <td data-field="id">10002</td>
+                                <td data-field="name">iPhone XS</td>
+                                <td data-field="type">Apple</td>
+                                <td data-field="number">99</td>
+                                <td data-field="price">1089</td>
+                                <td data-field="isShow">
+                                    <i class="glyphicon glyphicon-arrow-up isShow" aria-hidden="true"></i>
+                                </td>
+                                <td data-field="Recommend">
+                                    <i class="glyphicon glyphicon-star Recommend" aria-hidden="true"></i>
+                                </td>
+                                <td data-field="option">
+                                    <button type="button" class="btn btn-outline btn-default del" title="删除">
+                                        <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline btn-default" title="详情">
+                                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline btn-default" title="修改">
+                                        <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- End Example Events -->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.min.js?v=2.1.4"></script>
+<script src="../js/bootstrap.min.js?v=3.3.5"></script>
+<script src="../js/content.min.js?v=1.0.0"></script>
+<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="../js/demo/bootstrap-table-demo.min.js"></script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        $('#del').click(function () {
+            swal({
+                title: "您确定要删除这条信息吗",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "删除",
+                closeOnConfirm: false
+            }, function () {
+                $('.selected').remove();
+                swal("删除成功！", "您已经永久删除了这条信息。", "success");
+            });
+        });
+
+        $('.put-up').click(function () {
+            swal({
+                title: "您确定要上架这些商品吗？",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "上架",
+                closeOnConfirm: false
+            }, function () {
+                $('.selected').find('.isShow').removeClass().addClass('glyphicon glyphicon-arrow-up isShow');
+                swal("上架成功！");
+            });
+        });
+
+        $('.put-down').click(function () {
+            swal({
+                title: "您确定要下架这些商品吗？",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "下架",
+                closeOnConfirm: false
+            }, function () {
+                $('.selected').find('.isShow').removeClass().addClass('glyphicon glyphicon-arrow-down isShow');
+                swal("下架成功！");
+            });
+        });
+
+        $('.rcommend-yes').click(function () {
+            swal({
+                title: "您确定要推荐这些商品吗？",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "推荐",
+                closeOnConfirm: false
+            }, function () {
+                $('.selected').find('.Recommend').removeClass().addClass('glyphicon glyphicon-star Recommend');
+                swal("推荐成功！");
+            });
+        });
+
+        $('.rcommend-no').click(function () {
+            swal({
+                title: "您确定要撤销推荐这些商品吗？",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "撤销",
+                closeOnConfirm: false
+            }, function () {
+                $('.selected').find('.Recommend').removeClass().addClass('glyphicon glyphicon-star-empty Recommend');
+                swal("撤销成功！");
+            });
+        });
+    });
+</script>
