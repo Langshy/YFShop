@@ -32,7 +32,7 @@
                             事件结果
                         </div>
                         <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
-                            <button type="button" class="btn btn-outline btn-default" title="添加">
+                            <button type="button" class="btn btn-outline btn-default add" title="添加">
                                 <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
                             </button>
                             <button type="button" class="btn btn-outline btn-default put-up" title="显示">
@@ -195,6 +195,10 @@
                 $('.selected').find('.Recommend').removeClass().addClass('glyphicon glyphicon-star-empty Recommend');
                 swal("撤销成功！");
             });
+        });
+
+        $('.add').click(function () {
+            window.location.href='addProductType.html';
         });
 
     });
